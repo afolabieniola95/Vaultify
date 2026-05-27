@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Others Acccount</title>
+    <style>
+      body{
+        margin: 0;
+        font-family: Arial;
+      }
+      header{
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       width: 100%;
+       height: 30px;
+       background: navy;
+      }
+      h4{
+        margin: 0;
+        color: white;
+      }
+      .container{
+        position: relative;
+        width: 90%;
+        height: 130px;
+        border: 2px solid navy;
+        border-radius: 20px;
+        margin: 50px auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        padding: 8px;
+        background: navy;
+      }
+      .container.show{
+        height: 200px;
+      }
+      
+      span{
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: white;
+        margin: 0;
+      }
+      input{
+        width: 95%;
+        padding: 5px;
+        border: 2px solid whitesmoke;
+        font-size: 18px;
+        outline: none;
+        border-radius: 5px;
+        background: whitesmoke;
+        overflow: hidden;
+      }
+      .accounts-container{
+        position: relative;
+        width: 90%;
+        height: 300px;
+        min-height: 100px;
+        border: 2px solid navy;
+        border-radius: 20px;
+        margin: 50px auto;
+        padding: 8px;
+        background: navy;
+      }
+      .container-nav{
+        position: absolute;
+        top: 5px;
+        left: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+      #recent{
+        font-weight: bold;
+      }
+      #recent, #frequent{
+        font-size: 14px;
+        transition: transform 0.2s;
+      }
+      p{
+        margin: 0;
+        color: white;
+        font-size: 16px;
+      }
+       #search-account.show{
+       opacity: 1;
+       transform: translateY(0);
+       pointer-events: auto;
+      }
+      #search-account{
+        position: absolute;
+        top: 40px;
+        left: 8px;
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.2s;
+        transform: translateY(-10px);
+      }
+      .account-list, .frequent-account{
+        position: absolute;
+        top: 30px;
+        left: 10px;
+        width: 95%;
+        box-sizing: border-box;
+        transition: 0.2s;
+      }
+      .frequent-account{
+        opacity: 0;
+        pointer-events: none;
+        color: white;
+      }
+      .accounts{
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border-bottom: 1px dotted grey;
+        padding: 12px 0;
+      }
+      .profile{
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        background-size: cover;
+        background-position: center;
+      }
+      .name{
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .send-count{
+        position: absolute;
+        bottom: 10px;
+        right: 0px;
+        font-size: 12px;
+      }
+     .spinner {
+        display: none;
+        position: absolute;
+        bottom: 5px;
+        left: 8px;
+        width: 24px;
+        height: 24px;
+        border: 3px solid #ddd;
+        border-top-color: #000;
+        border-radius: 50%;
+        animation: spin 0.6s linear infinite;
+      }
+      @keyframes spin { 
+        to { transform: rotate(360deg);}
+      } 
+      .spinner.show{
+        display: block;
+      }
+      .verified-account{
+       display: flex;
+       align-items: center;
+       justify-content: start;
+       width: 100%;
+       mrgin-top: 25px;
+       opacity: 0;
+       transform: translateY(-10px);
+       pointer-events: none;
+       transition: 0.3s;
+      }
+     .verified-account.show{
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+      .verify-profile{
+        width: 30px;
+        height: 30px;
+        border-radius: 100px;
+        background-position: center;
+        background-size: cover;
+        border: 1px solid white;
+        margin-left: 8px;
+      }
+      .verified-bank-name{
+        width: 30px; 
+        height: 30px;
+        border-radius: 20px;
+      }
+      .verify-name{
+        font-size: 18px;
+        color: white;
+      }
+      #bank-account-number{
+        margin: 0;
+        color: white;
+        font-size: 16px;
+        font-weight: normal;
+      }
+      .select-bank{
+        color: white;
+        margin-right: auto;
+        border: none;
+        background: navy;
+        font-size: 16px;
+        border: 1px dotted gainsboro;
+        width : 100%;
+        margin-top: 40px;
+        border-radius: 10px;
+        cursor: pointer;
+        padding: 3px;
+      }
+      .banks-container{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: whitesmoke;
+        z-index: 9999;
+        transform: translateX(400px);
+        transition: 0.2s;
+      }
+      .banks-container.show{
+        transform: translateX(0);
+      }
+      .banks-container-header{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        background: navy;
+        padding: 5px;
+      }
+      .search-bank-container{
+        width: 95%;
+        display: flex;
+        align-items: center;
+        border: 1px solid gainsboro;
+        margin-top: 20px;
+        background: gainsboro;
+        margin: 20px auto;
+        border-radius: 8px;
+        padding-left: 5px;
+        font-size: 16px;
+      }
+      #search-bank{
+        background: gainsboro;
+        border: none;
+        padding: 8px;
+      }
+      .banks{
+        padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px
+      }
+      #bank-name{
+        margin: 0;
+        font-size: 12px;
+        color: white;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <header>
+    <img onclick="history.back()" src="icon/backarrow white.png" style="width: 20px; height: 20px;">
+    <h4>Transfer to banks</h4>
+    <h5 style="color: white; padding: 5px">history</h5>
+    </header>
+    
+    <div class="container">
+    <span>Recipient Account</span>
+    <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 30px; width: 100%;">
+    <input type="tel" id="account-number" maxlength="10" placeholder="Account number here...">
+     <img src="icon/contact.png" style="margin-left: 5px; width: 30px; height: 30px;">
+    </div>
+    
+    <button class="select-bank">Select Bank</button>
+    
+     <div class="spinner"></div>
+     
+     <div class="verified-account">
+       <div style="display: flex; align-items: center; flex-direction: column;">
+       <img class="verified-bank-name" src="icon/firstbank-logo.png">
+      <h5 id="bank-name">Firstbank</h5>
+      </div>
+      
+     <div style="padding-left: 40px; display: flex; align-items: center; flex-direction: column; gap: 3px;">
+       <div class="verify-name">Afolabi Boluwatife Eniola</div>
+       <h5 id="bank-account-number">9075484829</h5>
+     </div>
+</div>
+</div>
+
+    <div class="banks-container">
+      <div class="banks-container-header">
+       <img  id="close-container" src="icon/backarrow white.png" style="width: 20px; height: 20px;">
+       <p>Select Bank</p>
+      </div>
+      
+      <div class="search-bank-container">
+      <img src="icon/search white.png" style="width: 20px; height: 20px;">
+      <input type="search" id="search-bank" placeholder="Search">
+      </div>
+       
+       <div class="banks">
+         <div style="display: flex; align-items: center; flex-direction: column;">
+         <img src="icon/opay-logo.jpeg" style="weight: 40px; height: 40px;">
+         <div class="bank-name">Opay</div>
+         </div>
+         
+         <div style="display: flex; align-items: center; flex-direction: column;">
+         <img src="icon/moniepoint-logo.png" style="weight: 40px; height: 40px;">
+         <div class="bank-name">Moniepoint</div>
+         </div>
+         
+         <div style="display: flex; align-items: center; flex-direction: column;">
+         <img src="icon/firstbank-logo.png" style="weight: 40px; height: 40px;">
+         <div class="bank-name">Firstbank</div>
+         </div>
+         
+         <div style="display: flex; align-items: center; flex-direction: column;">
+         <img src="icon/uba-logo.png" style="weight: 40px; height: 40px;">
+         <div class="bank-name">UBA</div>
+         </div>
+         </div>
+         
+       </div>
+  
+    
+
+    <div class="accounts-container">
+      <div class="container-nav">
+        <p id="recent">Recent</p>
+        <p id="frequent">Frequent</p>
+        <img id="search-icon" src="icon/search white.png" style="width: 20px; height: 20px;">
+      </div>
+      
+      <input type="search" id="search-account" placeholder="Name or account number">
+    
+      <div class="account-list">
+        <div class="accounts" id="">
+          <div class="profile" style="background-image: url('image/bolu1.jpg')"></div>
+         
+          <div>
+          <p class="name">Afolabi Boluwatife Eniola</p>
+          <p class="account-num">9075484829</p>
+          </div>
+          <p class="send-count">2 times</p>
+          </div>
+        
+        <div class="accounts" id="">
+          <div class="profile" style="background-image: url('image/bolu2.jpg')"></div>
+         
+          <div>
+          <p class="name"> Boluwatife Eniola</p>
+          <p class="account-num">9031804917</p>
+          </div>
+          <p class="send-count">22 times</p>
+          </div>
+        </div>
+        <!--Account List Ends here-->
+        
+        <div class="frequent-account">
+         <div class="accounts" id="">
+          <div class="profile" style="background-image: url('image/bolu2.jpg')"></div>
+         
+          <div>
+          <p class="name"> Boluwatife Eniola</p>
+          <p class="account-num">9031804917</p>
+          </div>
+          <p class="send-count">22 times</p>
+          </div>
+        </div>
+    </div>
+    
+    <script>
+      let opened = false;
+      const searchIcon = document.getElementById('search-icon');
+      const searchAccount = document.getElementById('search-account');
+      const accountList = document.querySelector('.account-list');
+      const frequentList = document.querySelector('.frequent-account');
+  
+      searchIcon.addEventListener('click', (e)=>{
+        e.stopPropagation();
+        
+        if(!opened){
+          searchAccount.classList.add('show');
+          searchAccount.focus();
+          accountList.style.paddingTop = "60px";
+          frequentList.style.paddingTop = "60px";
+          opened = true;
+        }else{
+          searchAccount.classList.remove('show');
+          accountList.style.paddingTop = "0px";
+          frequentList.style.paddingTop = "0px";
+          opened = false;
+        }
+      });
+         searchAccount.addEventListener('click', (e)=>{
+          e.stopPropagation();
+      });
+
+      document.body.addEventListener('click', (e)=>{
+          searchAccount.classList.remove('show'); 
+          accountList.style.paddingTop = "0px"; 
+          frequentList.style.paddingTop = "0px";
+          opened = false;
+      });
+      
+      const recent = document.getElementById('recent');
+      const frequent = document.getElementById('frequent');
+      const recentContainer = document.querySelector('.account-list');
+      const frequentContainer = document.querySelector('.frequent-account');
+     
+       recent.addEventListener('click', () =>{
+         recent.style.fontWeight = "bold";
+         recent.style.fontSize = "16px";
+         frequent.style.fontWeight = "normal";
+         frequent.style.fontSize = "14px";
+         
+         
+         recentContainer.style.opacity = "1"; 
+         recentContainer.style.pointerEvents = "auto"; 
+         
+         frequentContainer.style.opacity = "0";
+         frequentContainer.style.pointerEvents = "none";
+       });
+       
+       frequent.addEventListener('click', () =>{
+         recent.style.fontWeight = "normal";
+         recent.style.fontSize = "14px";
+         frequent.style.fontWeight = "bold";
+         frequent.style.fontSize = "16px";
+         
+         frequentContainer.style.opacity = "1";
+         frequentContainer.style.pointerEvents = "auto";
+         
+         recentContainer.style.opacity = "0"; 
+         recentContainer.style.pointerEvents = "none"; 
+       });
+       
+       const container = document.querySelector('.container');
+       const accountNumber = document.getElementById('account-number');
+       const spinner = document.querySelector('.spinner');
+       const verifiedAccount = document.querySelector('.verified-account');
+  
+       let verifyTimeout;
+
+     accountNumber.addEventListener('input', () => {
+       const value = accountNumber.value.trim();
+
+      clearTimeout(verifyTimeout);
+      
+     spinner.classList.remove('show');
+     verifiedAccount.classList.remove('show');
+     container.classList.remove('show');
+     
+    if(value.length === 10){
+  
+      container.classList.add('show');
+      spinner.classList.add('show');
+    
+    
+      verifyTimeout = setTimeout(() => {
+      spinner.classList.remove('show');
+      verifiedAccount.classList.add('show');
+    }, 1500);
+        }
+    });
+       
+       accountNumber.addEventListener('input', () => {
+       accountNumber.value =
+       accountNumber.value.replace(/\D/g, '');
+       }); 
+       
+       const selectBank = document.querySelector('.select-bank');
+       const banksContainer = document.querySelector('.banks-container');
+       const closeContainer = document.getElementById('close-container');
+       
+       selectBank.addEventListener('click', ()=>{
+         banksContainer.classList.add('show');
+       });
+       
+       closeContainer.addEventListener('click', ()=>{
+         banksContainer.classList.remove('show');
+       });
+   
+    </script>
+    </body>
+    </html>
