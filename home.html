@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Acccount</title>
+    <link rel="stylesheet" href="home.css">
+  </head>
+  <body>
+ 
+  
+  <div id="app">
+
+  <!--index page-->
+  <div class="screen" id="index">
+    
+  <!--Screen Wrapper-->
+<div class="screen-wrapper">
+  <div class="top-bar">
+<div class="profile" id="user-avatar"></div>
+<div id="user-name"></div>
+  </div>
+  
+  
+    <div class="details-container">
+    <div class="detail-nav">
+    <div style="font-size: 14px;">Available Balance</div>
+    <img class="toggle-balance" id="opened" src="icon/balance-open.png">
+    <img class="toggle-balance" id="closed" src="icon/balance-closed.png" style="display: none; width: 30px; height: 30px;">
+    </div>
+    
+    <div class="balance">
+    <span id="symbol"></span>
+    <span id="user-balance"></span>
+    </div>
+
+   
+ 
+<a href="add-money.html">
+  <button class="top-up">+Add Money</button></a>
+  
+<a href="transaction-history.html">
+<div class="transaction">Transaction History</div></a>
+</div>
+  
+
+
+<div class="nav-container">
+  <div class="navBox">
+  <a href="vaultify-transaction.html" style="text-decoration: none; color: black;">
+  <div class="navBtn">
+  <div class="navIcon" style="background-image: url('icon/payrr.png');"></div>
+  </div>
+  <span>To vaultify</span>
+  </a>
+  </div>
+  
+  <div class="navBox">
+  <a href="otherBank-transaction" style="text-decoration: none; color: black">
+  <div class="navBtn">
+  <div class="navIcon" style="background-image: url('icon/bank.png');"></div>
+  </div>
+  <span>To bank</span>
+  </a>
+  </div>
+
+  
+  <div class="navBox">
+  <a href="Withdraw-transaction" style="text-decoration: none; color: black">
+  <div class="navBtn">
+  <div class="navIcon" style="background-image: url('icon/withdrawal.png');"></div>
+  </div>
+  <span>Withdraw</span>
+  </a>
+  </div>
+</div>
+  
+<div class="nav-container">
+    <div class="navBox">
+  <div class="navBtn">
+   <div class="navIcon" style="background-image: url('icon/crypto.png');"></div>
+  </div>
+  <span>Crypto</span>
+  </div>
+  
+    <div class="navBox">
+  <div class="navBtn">
+  <div class="navIcon" style="background-image: url('icon/coin.png');"></div>
+  </div>
+  <span>Coin</span>
+  </div>
+  
+    <div class="navBox">
+  <div class="navBtn">
+   <div class="navIcon" style="background-image: url('icon/daily check-in.png');"></div>
+  </div>
+  <span>Check-in</span>
+  </div>
+</div>
+
+  <div class="internet-container">
+    
+  <a href="airtime-recharge.html" style="text-decoration: none; color: black">
+   <div class="navBox">
+  <div class="navBtn">
+   <div class="navIcon" style="background-image: url('icon/airtime.png');"></div>
+  </div>
+  <span>Airtime</span>
+  </div> </a>
+  
+   <a href="data-recharge.html" style="text-decoration: none; color: black">
+  <div class="navBox">
+  <div class="navBtn">
+   <div class="navIcon" style="background-image: url('icon/data.png');"></div>
+  </div>
+  <span>Data</span>
+  </div></a>
+  
+    
+    <div class="navBox">
+  <div class="navBtn">
+   <div class="navIcon" style="background-image: url('icon/electricity.png');"></div>
+  </div>
+  <span>Electricity</span>
+  </div>
+  
+    
+    <div class="navBox">
+  <div class="navBtn">
+   <div class="navIcon" style="background-image: url('icon/savings.png');"></div>
+  </div>
+  <span>Savings</span>
+  </div>
+  
+  <div class="navBox">
+  <div class="navBtn">
+   <div class="navIcon" style="background-image: url('icon/investment.png');"></div>
+  </div>
+  <span>Investment</span>
+  </div>
+  
+    <div class="navBox">
+  <div class="navBtn">
+   <div class="navIcon" style="background-image: url('icon/contribution.png');"></div>
+  </div>
+  <span>Contribution</span>
+  </div>
+  
+  
+      <div class="navBox">
+  <div class="navBtn">
+   <div class="navIcon" style="background-image: url('icon/refer.png');"></div>
+  </div>
+  <span>Refer and earn</span>
+  </div>
+  
+
+  <div class="navBox">
+  <div class="navBtn" onclick="window.location.href = 'virtual-card.html' ">
+   <div class="navIcon" style="background-image: url('icon/virtual-card.png');"></div>
+  </div>
+  <span>Virtual card</span>
+  </div>
+  
+  </div>
+  
+  
+  <footer>
+  <div class="footer-nav">
+<img src="icon/home-active.png" style="width: 25px; height: 25px;">
+    <span id="home-text" style="color: navy; font-weight: bold;">Home</span>
+  </div>
+  
+    <div class="footer-nav">
+<img src="icon/message.png" style="width: 25px; height: 25px;">
+    <span>Message</span>
+  </div>
+  
+    <div class="footer-nav">
+<img src="icon/badge.png" style="width: 25px; height: 25px;">
+    <span>Badge</span>
+  </div>
+  
+  <a href="profile.html" style="text-decoration: none; color: black;">
+    <div class="footer-nav">
+<img src="icon/profile.png" style="width: 25px; height: 25px;">
+    <span>Profile</span>
+  </div></a>
+  </footer>
+  </div>
+  </div>
+  <!--End here-->
+  
+  
+  <!--Transfer History-->
+<div class="history">
+  
+      <!--Screen Wrappper-->
+  <div class="screen-wrapper">
+  <div class="history-header">
+  <img onclick="goBack()" src="icon/backarrow.png" style="width: 20px; height: 20px;">
+  <h3 style="margin: 0;">Transfer History</h3>
+</div>
+
+<div id="content" class="history-content"></div>
+  </div>
+</div>
+
+</div><!--App closing tag-->
+<script src="app.js" defer></script>
+<script src="home.js" defer></script>
+
+
+  </body>
+</html>
