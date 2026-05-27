@@ -1,0 +1,283 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  height: 100vh;        /* ✅ add this */
+  overflow: hidden;     /* ✅ stop scrolling */
+}
+#app {
+  width: 100%;
+  max-width: 400px; /* keeps your app small */
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  padding-top: 160px;
+  box-sizing: border-box;
+}
+.screen-wrapper {
+  padding: 70px 10px; 
+  position: relative;
+}
+.screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* fill wrapper */
+  height: 100%;
+}
+#index{
+  transition: 0.2s ease;
+}
+.top-bar{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 3;
+  background: white;
+  font-size: 20px;
+  color: back;
+  font-weight: bold;
+  padding: 0px 10px;
+  box-sizing: border-box;
+}
+.profile{
+  width: 40px;
+  height: 40px;
+  border: 1px solid gainsboro;
+  border-radius: 100%;
+  bakground: gainsboro;
+  background-position: center;
+  background-size: cover;
+  background-color: gainsboro;
+}
+.name{
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
+  font-family: Arial, Sans-Serif, Georgia;
+  padding-left: 10px;
+}
+  .notification img{
+        width: 25px;
+        height: 25px;
+      }
+  .details-container{
+        position: relative;
+        width: 100%;
+        height: 100px;
+        border: 1px solid navy;
+        border-radius: 9px;
+        margin-bottom: 10px;
+        background: navy;
+        color: white;
+        box-shadow: 0 0 7px grey;
+      }
+  .balance{
+      position: absolute;
+      top: 35px;
+      left: 0px;
+      font-size: 30px;
+      font-weight: bold;
+      text-align: left;
+      padding: 0px 10px;
+      }
+  #user-balance, #symbol{
+    font-size: 20px;
+  }
+  #rank-icon{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 25px;
+    height: 25px;
+  }
+  .detail-nav{
+     display: flex;
+     align-items: center;
+     padding: 0px 10px 0;
+     gap: 10px;
+     height: 40px;
+}
+  .detail-nav img{
+        width: 18px;
+        height: 18px;
+      }
+  h5{
+        padding-right: 10px;
+        margin-bottom: 20px;
+      }
+  .transaction{
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+        font-size: 13px;
+        color: white;
+      }
+  .top-up{
+      position: absolute;
+      top: 15px;
+      right: 10px;
+       width: 100px;
+       height: 30px;
+       font-size: 14px;
+       font-weight: bold;
+       border: none;
+       border-radius: 9px;
+    }
+  .number-nav{
+    width: 90%;
+    height: 50px;
+    font-family: Arial, Segoe UI;
+    font-weight: bold;
+    border: 1px solid navy;
+    border-radius: 9px;
+    background: navy;
+    color: white;
+    padding: 5px 10px 8px;
+  }
+  
+  .modal-header{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 100%;
+    border-bottom: 1px solid gainsboro;
+    padding-left: 20px;
+  }
+  
+  #copy{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 150px;
+    font-size: 18px;
+    border: 1px solid grey;
+    background: gainsboro;
+    box-shadow: 0 0 5px grey;
+    border-radius: 12px;
+  }
+  #copy:hover{
+    background: grey;
+    border: 1px solid gainsboro;
+    color: white;
+  }
+  .internet-container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    row-gap: 30px;
+    width: 100%;
+    height: auto;
+    border: 1px solid grey;
+    border-radius: 12px;
+    box-shadow: 1px 1px 6px grey;
+    padding: 20px 15px 10px;
+    box-sizing: border-box;
+    transition: transform 1s ease;
+    margin-top: 40px;
+  }
+  .nav-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 50px;
+    width: 100%;
+    height: auto;
+    border: 1px solid grey;
+    border-radius: 12px;
+    box-shadow: 1px 1px 6px grey;
+    padding: 10px 15px 5px;
+    box-sizing: border-box;
+    transition: transform 1s ease;
+    margin-top: 30px;
+  }
+  .navBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+  .navBtn{
+    width: 25px;
+    height: 25px;
+    border: 1px solid navy;
+    border-radius: 10%;
+    background: navy;
+    box-shadow: 2px 2px 3px grey;
+    padding: 5px;
+  }
+  .navIcon{
+    width: 100%;
+    height: 100%;
+    background-size: cover; 
+    background-position: center;
+  }
+  span{
+    font-size: 11px;
+    font-family: Arial, Segoe UI;
+  }
+  .rank{
+    position: absolute;
+    bottom: 0px;
+    left: 5px;
+    max-width: 20px;
+    max-height: 20px;
+  }
+  footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    border-top: 1px solid gainsboro;
+    background: white;
+    box-sizing: border-box;
+    padding: 5px 20px;
+  }
+  .footer-nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  footer span{
+    font-size: 13px;
+  }
+  /*Transaction History*/
+  .history{
+    width: 100%;
+    height: 100vh;
+    background: white;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s ease;
+    padding-top: 80px;
+  }
+  .history-header{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid gainsboro;
+    text-align: center;
+    padding: 5px;
+  }
+  .history-content{
+    text-align: center;
+    font-size: bold;
+    font-size: 18px;
+    font-family: Arial, Segoe UI, Georgia;
+    color: grey;
+  }
+
