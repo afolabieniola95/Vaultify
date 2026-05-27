@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Virtual Card</title>
+    <link rel="stylesheet" href="virtual-card.css">
+  </head>
+  <body>
+    <div class="header">
+    <img onclick="history.back()" src="icon/backarrow white.png" style="width: 20px; height: 20px;">
+    <div>Card</div>
+  <img id="notification-btn" src="icon/notification.png" 
+    style="width: 25px; height: 25px;">
+  </div>
+    
+    <div class="card-container">
+        <div class="virtual-card">
+        <h3>Payrr</h3>
+        <h4>Virtual Card</h4>
+        <h5><span id="span">V</span> erve</h5>
+        <div class="card-design">P</div>
+        <div class="card-nav"></div>
+        </div>
+    </div>
+    
+    <button class="create-card">Create Card</button>
+    
+    <div class="card-content">
+      <div class="content">
+        <div class="content-nav" id="customize-card">
+       <div class="icon" style="background-image: url('icon/customize.png');"></div>
+        </div>
+        <p>Customize Card</p>
+        </div>
+        
+      <div class="content">
+        <div class="content-nav">
+      <div class="icon" style="background-image: url('icon/settings.png');"></div>
+         </div>
+        <p>Card Settings</p>
+        </div>
+        
+      <div class="content">
+   <div class="content-nav" id="card-type-icon">
+      <div class="icon" style="background-image: url('icon/card-type.png');"></div>
+         </div>
+        <p>Card Types</p>
+        </div>
+    </div>
+    
+    <div class="cards-container">
+  <div class="card-badge">
+   <img class="badge" src="icon/diamond-one.png">
+    <img class="cards" id="card-1" src="image/card-1.jpeg">
+    </div>
+    
+  <div class="card-badge">
+   <img class="badge" src="icon/diamond-two.png">
+    <img class="cards" id="card-2" src="image/card-2.jpeg">
+    </div>
+    
+  <div class="card-badge">
+   <img class="badge" src="icon/diamond-three.png">
+   <img class="cards" id="card-3" src="image/card-3.jpeg">
+    </div>
+    
+  <div class="card-badge">
+   <img class="badge" src="icon/diamond-four.png">
+    <img class="cards" id="card-4" src="image/card-4.jpeg">
+    </div>
+    
+  <div class="card-badge">
+ <img class="badge" src="icon/diamond-five.png">
+    <img class="cards" id="card-5" src="image/card-5.jpeg">
+    </div>
+</div>
+    
+  <div class="card-type">
+    
+<img onclick="hello()" src="icon/backarrow.png" 
+style="width: 20px; height: 20px; margin-left: 20px; margin-right: auto;">
+  
+  <div class="card-type-nav">
+  <h3>Payrr</h3>
+  <h4>Virtual Card</h4>
+  <h5><span id="span">V</span> erve</h5>
+  <div class="card-design">P</div>
+  <img src="image/card-1.jpeg" class="type">
+  <div class="card-nav"></div>
+  </div>
+  
+  <div class="card-type-nav">
+  <h3>Payrr</h3>
+  <h4>Virtual Card</h4>
+  <h5>
+    <span id="span">V</span>isa</h5>
+  <div class="card-design">P</div>
+  <img src="image/card-2.jpeg" class="type">
+  <div class="card-nav"></div>
+  </div>
+  
+   <div class="card-type-nav">
+  <h3>Payrr</h3>
+  <h4>Virtual Card</h4>
+  <h5><span id="span">M</span>aster</h5>
+  <div class="card-design">P</div>
+  <img src="image/card-4.jpeg" class="type">
+  <div class="card-nav"></div>
+  </div>
+  </div>
+  
+  <!--History-->
+<div id="notification-container"></div>
+
+    <script src="virtual-card.js" defer></script>
+  </body>
+</html>
