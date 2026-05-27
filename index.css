@@ -1,0 +1,347 @@
+body{
+    margin: 0;
+    font-family: Arial, Comic Sans MS;
+ }
+   #signLogin-container{
+     width: 100%;
+     height: 100vh;
+     perspective: 1000px;
+     overflow: hidden;
+  }
+  .cards {
+  width: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+.cards.flip {
+  transform: rotateY(180deg);
+}
+
+  #signLogin-body, #signUp-body{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    border: 1px solid white;
+    box-sizing: border-box;
+    background: whitesmoke;
+    box-shadow: 0 0 8px lightblue;
+    backface-visibility: hidden;
+    padding-top: 70px;
+  }
+   #signUp-body{
+    transform: rotateY(180deg);
+  }
+  .logo{
+    text-align: center;
+    font-size: 35px;
+    font-family: Arial, Sans-Serif;
+    font-weight: bold;
+    color: navy;
+    transform: skew(-20deg);
+    margin: 10px 0px 100px;
+  }
+  .input-wrapper{
+    position: relative;
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+.input-wrapper input{
+    width: 100%;
+    height: 30px;
+    outline: none;
+    padding: 3px 10px;
+    font-size: 18px;
+    font-family: Arial,Sans-Serif;
+    background: navy;
+    color: white;
+    border-radius: 8px;
+    border: none;
+  }
+
+.input-wrapper label {
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  pointer-events: none;
+  transition: 0.3s ease;
+  background: navy;
+  padding: 0 4px;
+}
+/* when input is focused OR has value */
+.input-wrapper input:focus + label,
+.input-wrapper input:not(:placeholder-shown) + label {
+  top: -10px;
+  left: -6px;
+  font-size: 17px;
+  font-weight: bold;
+  color: black;
+  background: whitesmoke;
+}
+  label{
+    font-size: 16px;
+    margin-right: auto;
+    margin-bottom: 5px;
+    color: white;
+  }
+  #next, #login, #signUp{
+    position: relative;
+    padding:  3px 40px;
+    border-radius: 9px;
+    border: 1px solid navy;
+    font-size: 16px;
+    color: white;
+    background: navy;
+    box-shadow: 0 0 2px blue;
+    display: block;
+    margin: 50px auto 0;
+    cursor: pointer;
+  }
+  #previous{
+    padding:  3px 40px;
+    border-radius: 9px;
+    border: 1px solid lightgrey;
+    font-size: 16px;
+    color: white;
+    background: lightgrey;
+    box-shadow: 0 0 4px lightgrey;
+    display: block;
+    margin: 50px auto 0;
+    cursor: pointer;
+  }
+   #login-error, #signup-error{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    padding: 1px 5px;
+    color:red ;
+   } 
+#login-error.show, 
+#signup-error.show {
+  transform: scale(1.1);
+  opacity: 1;
+}
+     .spinner {
+        display: none;
+        position: absolute;
+        bottom: 0;
+        left: 10px;
+        width: 20px;
+        height: 20px;
+        border: 3px solid #ddd;
+        border-top-color: #000;
+        border-radius: 50%;
+        animation: spin 0.6s linear infinite;
+      }
+      @keyframes spin { 
+        to { transform: rotate(360deg);}
+      } 
+      .spinner.show{
+        display: block;
+      }
+      
+.strength-container,
+.reset-strength-container {
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 30px;
+  transition: 0.3s ease;
+  opacity: 0;
+}
+.strength-container.width,
+.reset-strength-container.width{
+  opacity: 1;
+}
+#strength-bar, 
+#newPassword-strength-bar {
+  height: 100%;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+#strength-text{
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  font-family: Arial, Sans-Serif;
+}
+#newPassword-strength-text{
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  font-family: Arial, Sans-Serif;
+}
+.successfulBox{
+  position: fixed;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.2s;
+}
+.successfulBox img{
+width: 100%;
+height: 100%;
+object-fit: cover;
+border-radius: 100px;
+}
+.successBox-background{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgb(0,0,0,0.1);
+}
+#profile-pic{
+  width: 100px;
+  height: 100px;
+  border: 2px solid navy;
+  border-radius: 20px;
+  background-position: center;
+  background-size: cover;
+  margin: 20px auto;
+  background: gainsboro;
+  padding: 5px;
+  }
+#file-picker{
+  display: none;
+}
+.forgotten-password-modal{
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 420px;
+  background: whitesmoke;
+  padding: 30px;
+  border-radius: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.2s;
+  z-index: 1000;
+}
+.forgotten-password-modal.active{
+  opacity: 1;
+  pointer-events: auto;
+}
+.header{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px
+}
+.profile-pic{
+  width: 100px;
+  height: 100px;
+  border-radius: 10%;
+  border: 2px solid gainsboro;
+  box-shadow: 0 2px 5px grey;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+}
+.name-wrapper-container{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.emailPhone-wrapper-container,
+.password-wrapper-container,
+.profile-wrapper-container{
+  flex-direction: column;
+  gap: 30px;
+  opacity: 0;
+  pointer-events: none;
+  display: none;
+  transition: transform 0.4s;
+}
+.name-wrapper-container.show,
+.emailPhone-wrapper-container.show,
+.password-wrapper-container.show,
+.profile-wrapper-container.show{
+  flex-direction: column;
+  gap: 30px;
+  opacity: 1;
+  pointer-events: auto;
+  display: flex;
+}
+  .disabled-click{
+    position: fixed;
+    top: 21%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border: 2px solid transparent;
+    background: transparent;
+    border-radius: 100%;
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.4s;
+  }
+  .disabled-click.disable{
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .upload-text{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0px;
+    background: gainsboro;
+    text-align: center;
+    font-size: 16px;
+    box-shadow: 0 0 5px grey;
+    text-shadow: 0 0 2px grey;
+    color: brown;
+    transition: 0.4s;
+  }
+  .upload-text.upload{
+    height: 20px;
+    padding: 8px;
+  }
+  .spinner{
+    position: absolute;
+    top: 35px;
+    left: 35px;
+    diplay: none;
+    width: 25px;
+    height: 25px;
+    border: 3px solid white;
+    border-top-color: navy;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+    z-index: 4;
+  }
+  @keyframes spin { 
+    to { transform: rotate(360deg);}
+  } 
+  .spinner.show{
+    display: block;
+  }
