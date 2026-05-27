@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaultify Acccount</title>
+    <style>
+      body{
+        margin: 0;
+        font-family: Arial;
+      }
+      header{
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       width: 100%;
+       height: 30px;
+       background: navy;
+      }
+      h4{
+        margin: 0;
+        color: white;
+      }
+      .container{
+        position: relative;
+        width: 90%;
+        height: auto;
+        min-height: 100px;
+        border: 2px solid navy;
+        border-radius: 20px;
+        margin: 50px auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        padding: 8px;
+        background: navy;
+      }
+      span{
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: white;
+        margin: 0;
+      }
+      input{
+        width: 95%;
+        padding: 5px;
+        border: 2px solid whitesmoke;
+        font-size: 18px;
+        outline: none;
+        border-radius: 5px;
+        background: whitesmoke;
+        overflow: hidden;
+      }
+      .accounts-container{
+        position: relative;
+        width: 90%;
+        height: 300px;
+        min-height: 100px;
+        border: 2px solid navy;
+        border-radius: 20px;
+        margin: 50px auto;
+        padding: 8px;
+        background: navy;
+      }
+      .container-nav{
+        position: absolute;
+        top: 5px;
+        left: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+      #recent{
+        font-weight: bold;
+      }
+      #recent, #frequent{
+        font-size: 14px;
+        transition: transform 0.2s;
+      }
+      p{
+        margin: 0;
+        color: white;
+        font-size: 16px;
+      }
+      #search-account{
+        position: absolute;
+        top: 40px;
+        left: 8px;
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.2s;
+      }
+      .account-history, .frequent-account{
+        position: absolute;
+        top: 30px;
+        left: 10px;
+        width: 95%;
+        box-sizing: border-box;
+        transition: 0.2s;
+      }
+      .frequent-account{
+        opacity: 0;
+        pointer-events: none;
+        color: white;
+      }
+      .accounts{
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border-bottom: 1px dotted grey;
+        padding: 12px 0;
+      }
+      .profile{
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        background-size: cover;
+        background-position: center;
+      }
+      .name{
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .send-count{
+        position: absolute;
+        bottom: 10px;
+        right: 0px;
+        font-size: 12px;
+      }
+     .spinner {
+        display: none;
+        position: absolute;
+        bottom: 5px;
+        left: 8px;
+        width: 24px;
+        height: 24px;
+        border: 3px solid #ddd;
+        border-top-color: #000;
+        border-radius: 50%;
+        animation: spin 0.6s linear infinite;
+      }
+      @keyframes spin { 
+        to { transform: rotate(360deg);}
+      } 
+      .spinner.show{
+        display: block;
+      }
+      .verified-account{
+        display: none;
+        align-items: center;
+        justify-content: start;
+        boder: 2px solid white;
+        width: 100%;
+        height: 30px;
+        padding: 5px;
+        margin-top: 25px;
+      }
+      .verify-profile{
+        width: 35px;
+        height: 35px;
+        border-radius: 100px;
+        background-position: center;
+        background-size: cover;
+        border: 1px solid white;
+        margin-left: 8px;
+      }
+      .verify-name{
+        font-size: 18px;
+        font-weight: bold;
+        color: white;
+        padding-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+    <img onclick="history.back()" src="icon/backarrow white.png" style="width: 20px; height: 20px;">
+    <h4>Transfer to vaultify</h3>
+    <h5 style="color: white; padding: 5px">history</h5>
+    </header>
+    
+    <div class="container">
+    <span>Recipient Account</span>
+    <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 30px; width: 100%;">
+    <input type="tel" id="account-number" maxlength="10" placeholder="Account number here...">
+     <img src="icon/contact.png" style="margin-left: 5px; width: 30px; height: 30px;">
+    </div>
+    
+     <div class="spinner"></div>
+     
+     <div class="verified-account">
+       <div class="verify-profile" style="background-image: url('image/bolu1.jpg');"></div>
+       <div class="verify-name"></div>
+     </div>
+       
+     <div class="account-list" id="account-list"></div>
+    </div>
+
+    <div class="accounts-container">
+      <div class="container-nav">
+        <p id="recent">Recent</p>
+        <p id="frequent">Frequent</p>
+        <img id="search-icon" src="icon/search white.png" style="width: 20px; height: 20px;">
+      </div>
+      
+      <input type="search" id="search-account" placeholder="Name or account number">
+    
+      <div class="account-history">
+        <div class="accounts" id="">
+          <div class="profile" style="background-image: url('image/bolu1.jpg')"></div>
+         
+          <div>
+          <p class="name">Afolabi Boluwatife Eniola</p>
+          <p class="account-num">9075484829</p>
+          </div>
+          <p class="send-count">2 times</p>
+          </div>
+        
+        <div class="accounts" id="">
+          <div class="profile" style="background-image: url('image/bolu2.jpg')"></div>
+         
+          <div>
+          <p class="name"> Boluwatife Eniola</p>
+          <p class="account-num">9031804917</p>
+          </div>
+          <p class="send-count">22 times</p>
+          </div>
+        </div>
+        <!--Account List Ends here-->
+        
+        <div class="frequent-account">
+         <div class="accounts" id="">
+          <div class="profile" style="background-image: url('image/bolu2.jpg')"></div>
+         
+          <div>
+          <p class="name"> Boluwatife Eniola</p>
+          <p class="account-num">9031804917</p>
+          </div>
+          <p class="send-count">22 times</p>
+          </div>
+        </div>
+    </div>
+    
+<script>
+
+const users =
+JSON.parse(localStorage.getItem('users')) || [];
+
+const accountNumber =
+document.getElementById('account-number');
+
+const accountList =
+document.getElementById('account-list');
+
+const verifiedAccount =
+document.querySelector('.verified-account');
+
+const verifyName =
+document.querySelector('.verify-name');
+
+const verifyProfile =
+document.querySelector('.verify-profile');
+
+const spinner =
+document.querySelector('.spinner');
+
+let verifyTimer;
+
+
+// ===== LIVE SEARCH =====
+
+accountNumber.addEventListener('input', () => {
+
+  clearTimeout(verifyTimer);
+
+  const value =
+  accountNumber.value.trim();
+
+  verifiedAccount.style.display = "none";
+
+  spinner.classList.remove('show');
+
+  // empty input
+  if(value === ""){
+    accountList.innerHTML = "";
+    return;
+  }
+
+  // FILTER USERS
+  const filteredUsers = users.filter(user =>
+
+    user.phone
+      .replace(/^0/, "")
+      .startsWith(
+        value.replace(/^0/, "")
+      )
+
+  );
+
+  renderAccounts(filteredUsers);
+
+  // VERIFY ACCOUNT
+  const matchedUser = users.find(user =>
+
+    user.phone.replace(/^0/, "") ===
+    value.replace(/^0/, "")
+
+  );
+
+  if(matchedUser){
+
+    spinner.classList.add('show');
+
+    verifyTimer = setTimeout(() => {
+
+      spinner.classList.remove('show');
+
+      verifiedAccount.style.display = "flex";
+
+      verifyName.textContent =
+      matchedUser.name;
+
+      verifyProfile.style.backgroundImage =
+      `url('${matchedUser.avatar || "icon/no-profile.png"}')`;
+
+      accountList.innerHTML = "";
+
+    }, 1000);
+
+  }
+
+});
+
+
+// ===== RENDER FILTERED USERS =====
+
+function renderAccounts(filteredUsers){
+
+  accountList.innerHTML = "";
+
+  filteredUsers.forEach(user => {
+
+    accountList.innerHTML += `
+
+      <div class="accounts"
+      onclick="selectAccount('${user.phone}')">
+
+        <div class="profile"
+        style="background-image:url('${user.avatar || "icon/no-profile.png"}')">
+        </div>
+
+        <div>
+          <p class="name">${user.name}</p>
+          <p class="account-num">${user.phone}</p>
+        </div>
+
+      </div>
+
+    `;
+
+  });
+
+}
+
+
+// ===== SELECT ACCOUNT =====
+
+function selectAccount(phone){
+
+  accountNumber.value = phone;
+
+  const matchedUser = users.find(user =>
+    user.phone === phone
+  );
+
+  if(!matchedUser) return;
+
+  verifiedAccount.style.display = "flex";
+
+  verifyName.textContent =
+  matchedUser.name;
+
+  verifyProfile.style.backgroundImage =
+  `url('${matchedUser.avatar || "icon/no-profile.png"}')`;
+
+  accountList.innerHTML = "";
+
+}
+
+</script>
+    </body>
+    </html>
