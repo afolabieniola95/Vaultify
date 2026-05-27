@@ -1,0 +1,224 @@
+body{
+    margin: 0;
+    font-family: Arial, Sans-Serif;
+  }
+  .header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    gap: 8px;
+    border-bottom: 1px solid whitesmoke;
+    box-sizing: border-box;
+    background: navy;
+    color: white;
+  }
+  h5,h4{
+    margin: 0;
+  }
+  .airtime-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 10px;
+    gap: 10px;
+    box-sizing: border-box;
+  }
+  #airtime-body{
+    width: 70%;
+    height: 50px;
+    border: 1px solid navy;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: navy;
+    color: white;
+  }
+  #airtime-number{
+    width: 80%;
+    height: 50px;
+    outline: none;
+    box-sizing: border-box;
+    border: none;
+    font-size: 24px;
+    background: navy;
+    color: white;
+    padding-left: 10px;
+  }
+  .h4{
+    font-size: 16px;
+    font-weight: normal;
+    border-right: 1px solid gainsboro;
+  }
+  #airtime-type{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-image: url('image/mtn.png');
+    background-size: cover;
+    background-position: center 
+    background-repeat: no-repeat;
+ }
+ 	.dropdown {
+  position: relative;
+  display: inline-block;
+}
+ .dropdown-menu{
+   position: absolute;
+   top: 110%;
+   left: -40%;
+   min-width: 50px;
+   border-radius: 9px;
+   background: gainsboro;
+   box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+   opacity: 0;
+   pointer-events: none;
+   transform: translateY(-40px, -10px);
+   transition: 0.2s ease;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.dropdown.active .dropdown-menu {
+   opacity: 1;
+   pointer-events: auto;
+   transform: translateY(0);
+}
+
+.dropdown-item {
+   width: 35px;
+   height: 35px;
+   margin: 10px;
+   border-radius: 100%;
+   cursor: pointer;
+}
+
+.dropdown-item:hover {
+   background: #f5f5f5;
+}
+
+  #select-contact{
+    width: 20px;
+    height: 20px;
+    border: 2px solid navy;
+    border-radius: 10px;
+    background: navy;
+    padding: 5px;
+  }
+  .contact-icon{
+    width: 100%;
+    height: 100%;
+    background-image: url('icon/contact.png');
+    background-size: cover;
+    background-position: center 
+    background-repeat: no-repeat;
+  }
+  .top-up{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    width: 95%;
+    height: 200px;
+    border: 1px solid gainsboro;
+    gap: 40px;
+    padding: 30px 10px;
+    box-sizing: border-box;
+    margin: 60px auto;
+    border-radius: 20px;
+    background: whitesmoke;
+  }
+  .top-up-nav{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 50px;
+    border: 1px solid navy;
+    border-radius: 12px;
+    background: navy;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+   .top-up-nav.active{
+    background: gainsboro;
+   } 
+  span{
+    font-size: 12px;
+  }
+  .cash-back{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 12px;
+    border: 1px solid rgb(0,0,228,0.5);;
+    background: rgb(0,0,228,0.5);
+    border-radius: 0 0 9px 9px;
+    box-sizing: border-box;
+    font-size: 10px;
+    text-align: center;
+    padding-bottom: 2px;
+  }
+  .price-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 90px 5px 0;
+    box-sizing: border-box;
+  }
+  #price{
+    border: none;
+    border-bottom: 2px solid whitesmoke;
+    outline: none;
+    width: 180px;
+    font-size: 20px;
+  }
+  button{
+    width: 100px;
+    padding: 5px;
+    border: 1px solid navy;
+    border-radius: 9px;
+    background: navy;
+    font-size: 16px;
+    color: white;
+  }
+  button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+  .error {
+  color: red;
+  font-size: 12px;
+  margin-left: 30px;
+  margin-top: 5px;
+}
+#history-container{
+  position: fixed;
+  top: 5%;
+  left: 0;
+  width: 100%;
+  height: 10vh;
+  transition: 2.4s ease;
+  background: white;
+  transition: 0.4s ease;
+  transfom: translateY(-10px);
+  opacity: 0;
+  pointer-events: none;
+}
+.history-header{
+  width: 100%;
+  height: 30px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 10px;
+  background: navy;
+}
