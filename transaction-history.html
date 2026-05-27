@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transaction History</title>
+  <style>
+    body{
+      margin: 0;
+      font-family: Arial, Sans-Serif;
+    }
+    header{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: navy;
+      color: white;
+      padding: 10px;
+    }
+    h3{
+      margin: 0;
+      font-size: 15px;
+    }
+    header img{
+      width: 20px;
+      height: 20px;
+    }
+    
+.filter-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 2%;
+}
+/* container */
+.dropdown, .status {
+  position: relative;
+  width: 100%;
+}
+
+/* button */
+.dropdown-btn, .status-btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  background: gainsboro;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  text-align: center;
+}
+
+/* arrow */
+.arrow::after {
+  content: "▼";
+  font-size: 12px;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+/* rotate arrow when active */
+.dropdown.active .arrow::after,
+.status.active .arrow::after {
+  transform: rotate(180deg);
+}
+
+/* dropdown menu */
+.categories-menu, .status-menu {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: gainsboro;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  padding: 15px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  column-gap: 10px;
+  /* animation base */
+  opacity: 0;
+  transform: translateY(-10px) scale(0.98);
+  pointer-events: none;
+  transition: all 0.25s ease;
+  z-index: 10;
+}
+
+/* active state */
+.dropdown.active .categories-menu,
+.status.active .status-menu{
+  left: 50%;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0) scale(1);
+  width: 96vw;
+  pointer-events: auto;
+}
+
+/* items */
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 5px;
+  background: #f7f7f7;
+  text-align: center;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.item:hover {
+  background: #e6f7ee;
+}
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <img onclick="history.back()" src="icon/backarrow white.png">
+    <h3>Transaction History</h3>
+    <img src="icon/backarrow white.png">
+  </header>
+  <div class="filter-bar">
+    
+  <div class="dropdown">
+    <button class="dropdown-btn">All categories
+    <span class="arrow"></span>
+  </button>
+
+  <div class="categories-menu" id="categories">
+    <div class="item"> Transfer</div>
+    <div class="item"> Withdraw</div>
+    <div class="item"> Crypto</div>
+    <div class="item"> Coin</div>
+    <div class="item"> Airtime</div>
+    <div class="item"> Data</div>
+    <div class="item"> Bills</div>
+    <div class="item"> Betting</div>
+    <div class="item"> Bank</div>
+  </div>
+</div>
+
+<div class="status">
+    <button class="status-btn">All status
+    <span class="arrow"></span>
+  </button>
+
+  <div class="status-menu" id="status">
+    <div class="item"> Transfer</div>
+    <div class="item"> Withdraw</div>
+    <div class="item"> Crypto</div>
+    <div class="item"> Coin</div>
+    <div class="item"> Airtime</div>
+    <div class="item"> Data</div>
+  
+  </div>
+</div>
+</div>
+  
+  <div id="history-container">
+    
+  </div>
+  
+  <script>
+const dropdowns = document.querySelectorAll(".dropdown, .status");
+
+dropdowns.forEach(dropdown => {
+  const btn = dropdown.querySelector(".dropdown-btn, .status-btn");
+  
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation(); // prevent the "click outside" from firing immediately
+    
+    // close other dropdowns first
+    dropdowns.forEach(d => {
+      if (d !== dropdown) d.classList.remove("active");
+    });
+    
+    dropdown.classList.toggle("active");
+  });
+});
+
+// click outside to close any open dropdown
+document.addEventListener("click", (e) => {
+  dropdowns.forEach(dropdown => {
+    if (!dropdown.contains(e.target)) {
+      dropdown.classList.remove("active");
+    }
+  });
+});
+
+// optional: update button text when item is clicked
+document.querySelectorAll(".item").forEach(item => {
+  item.addEventListener("click", function() {
+    const parent = this.closest(".dropdown, .status");
+    const btn = parent.querySelector(".dropdown-btn, .status-btn");
+    btn.firstChild.textContent = this.textContent + " "; // keep the arrow
+    parent.classList.remove("active");
+  });
+});
+    
+  </script>
+</body>
+</html>
