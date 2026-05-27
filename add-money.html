@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale =1.0">
+    <title>Add Money</title>
+    <style>
+  body{
+    margin: 0;
+    font-family: Arial, Sans-Serif;
+    box-sizing: border-box;
+  }
+  
+  .header{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 95%;
+    height: 25px;
+    font-size: 17px;
+    font-weight: normal;
+    font-family: Arial, Comic Sans MS;
+    pading: 10px;
+    border-bottom: 1px solid gainsboro;
+    margin: auto;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  
+  .account-number{
+    position: relative;
+    width: 90%;
+    height: 60px;
+    border: 2px solid navy;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: Arial, Georgia;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 70px auto;
+    color: white;
+    background: navy;
+    -webkit-border-radius: 10px;
+  }
+ 
+  
+  span{
+    position: absolute;
+    top: 14%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 15px;
+    color: white;
+    font-weight: normal;
+    text-align: center;
+  }
+  
+  p{
+    padding-top: 12px;
+  }
+  
+  button{
+    width: 200px;
+    height: 30px;
+    border-radius: 9px;
+    background: gainsboro;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .share{
+    background: rgb(0,0,150);
+    color: white;
+  }
+  
+  .footer{
+    width: 100%;
+    position: fixed;
+    bottom: 30px;
+    left: 0px;
+    display: flex; 
+    align-items: center; 
+    gap: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .nav{
+    display: flex;
+    align-items: center;
+    width: 90%;
+    font-size: 18px;
+    border: 1px solid whitesmoke;
+    background: rgb(240,240,240);
+    margin: 40px auto; 
+    padding: 15px;
+    box-sizing: border-box;
+    font-weight: bold;
+    border-radius: 12px;
+  }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <img onclick="history.back()" src="icon/backarrow.png" style="width: 20px; height: 20px;">
+      <h4>Add Money</h4>
+   </div>
+   
+   
+   <div class="account-number">
+     <span>Payrr account number</span>
+     <p>9075484829</p>
+    </div>
+    
+    <div class="footer">
+    <button>Copy number</button>
+    <button class="share">Share with</button>
+    </div>
+    
+    <div class="content-nav">
+        <div class="nav">Ask a friend</div>
+        <div class="nav">Redeem gift card</div>
+        <div class="nav">Redeem coin</div>
+   </div>
+   
+   
+   
+  </body>
+</html>
