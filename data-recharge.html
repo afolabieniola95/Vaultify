@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Recharge</title>
+    <link rel="stylesheet" href="data-recharge.css">
+  </head>
+  <body>
+    <div class="header">
+      <img onclick="history.back()" src="icon/backarrow white.png" style="width: 20px; height: 20px;">
+      <h4>Mobile Data</h4>
+      <h5 id="history-btn">History</h5>
+    </div>
+  
+    
+    
+    
+    <div class="data-container">
+     <div class="dropdown" data-dropdown>
+    <div id="data-type" class="dropdown-toggle"></div>
+      
+    <div class="dropdown-menu">
+       <img  src="image/airtel.png" class="dropdown-item">
+       <img src="image/glo.jpeg" class="dropdown-item">
+       <img src="image/mtn.png" class="dropdown-item">
+     </div>
+</div>
+      
+      <div id="data-body">
+        <h4 class="h4"><span style="padding-right: 5px;">+234</span>
+        </h4>
+       <input type="tel" id="data-number" maxlength="11">
+      </div>
+      
+    <div id="select-contact">
+     <div class="contact-icon"></div>
+      </div>
+  </div>
+  
+
+  
+
+    <div class="top-up">
+      <div id="topUp-btn">
+      <div class="best-offer" id="flashy">Flashy</div>
+      <div class="best-offer" id="daily">Daily</div>
+      <div class="best-offer" id="weekly">Weekly</div>
+      <div class="best-offer" id="monthly">Monthly</div>
+      <div class="best-offer" id="nighty">Nighty</div>
+      </div>
+      
+      <!--Flashy start here-->
+      <div id="best-offer">
+    <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">1 Day</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">250mb</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>25</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 0.2 Cashback</div>
+     </div>
+     
+        <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">Nighty</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">500mb</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>50</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 0.5 Cashback</div>
+     </div>
+     
+     <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">1 Day</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">750mb</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>100</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 0.10 Cashback</div>
+     </div>
+     
+  <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">2 Day</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">1GB</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>200</div>
+     </div>
+     
+   <div class="cash-back"><span>&#8358</span> 0.20 Cashback</div>
+     </div>
+     
+     
+ <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">1 Day</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">1.5GB</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>300</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 0.25 Cashback</div>
+     </div>
+     
+ <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">2 Day</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">2GB</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>500</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 0.50 Cashback</div>
+     </div>
+     
+  <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">Weekly</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">2GB</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>1,000</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 10 Cashback</div>
+     </div>
+  
+   <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">Monthly</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">4.5GB</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>2,500</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 2.5 Cashback</div>
+     </div>
+  
+   <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">Monthly</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">7GB</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>5,000</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 50 Cashback</div>
+     </div>
+  
+</div><!--Flashy closing-->
+ 
+   <!--Daily Offer--->
+      <div id="daily-offer">
+    <div class="top-up-nav" data-value="50">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">1 Day</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">50mb</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>50</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 0.5 Cashback</div>
+     </div>
+     
+     
+  <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">1 Day</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">100mb</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>100</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 0.10 Cashback</div>
+     </div>
+     
+  <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">1 Day</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">150mb</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>150</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 0.15 Cashback</div>
+     </div>
+    
+ <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">1 Day</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">200mb</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>200</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 0.20 Cashback</div>
+     </div>
+  
+  <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">1 Day</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">500mb</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>350</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 1.5 Cashback</div>
+     </div>
+  
+     <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">1 Day</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">1GB</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>500</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 2 Cashback</div>
+     </div>
+     
+  <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">1 Day</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">1.5GB</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>750</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 2.5 Cashback</div>
+     </div>
+    
+  <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">1 Day</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">2GB</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>1,000</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 3 Cashback</div>
+     </div>
+     
+    <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">1 Day</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">2.5GB</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>1,500</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 3.5 Cashback</div>
+     </div>
+      
+</div><!--daily offer closing-->
+
+    <!---Weekly Offer-->
+    <div id="weekly-offer">
+      
+    <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">7 Day</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">50mb</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>50</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 0.5 Cashback</div>
+     </div>
+     
+     
+  <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">7 Day</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">100mb</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>100</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 0.10 Cashback</div>
+     </div>
+     
+  <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">7 Day</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">150mb</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>150</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 0.15 Cashback</div>
+     </div>
+    
+ <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">7 Day</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">200mb</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>200</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 0.20 Cashback</div>
+     </div>
+  
+  <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">7 Day</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">500mb</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>350</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 1.5 Cashback</div>
+     </div>
+  
+     <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">7 Day</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">1GB</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>500</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 2 Cashback</div>
+     </div>
+     
+  <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">7 Day</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">1.5GB</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>750</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 2.5 Cashback</div>
+     </div>
+    
+  <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">7 Day</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">2GB</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>1,000</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 3 Cashback</div>
+     </div>
+     
+    <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">7 Day</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">2.5GB</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>1,500</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 3.5 Cashback</div>
+     </div>
+      
+</div><!--Weekly offer closing-->
+
+    <!---Monthly Offer-->
+    <div id="monthly-offer">
+      
+    <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">30 Day</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">50mb</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>50</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 0.5 Cashback</div>
+     </div>
+     
+     
+  <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">30 Day</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">100mb</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>100</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 0.10 Cashback</div>
+     </div>
+     
+  <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">30 Day</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">150mb</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>150</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 0.15 Cashback</div>
+     </div>
+    
+ <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">30 Day</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">200mb</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>200</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 0.20 Cashback</div>
+     </div>
+  
+  <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">30 Day</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">500mb</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>350</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 1.5 Cashback</div>
+     </div>
+  
+     <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">30 Day</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">1GB</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>500</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 2 Cashback</div>
+     </div>
+     
+  <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">30 Day</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">1.5GB</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>750</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 2.5 Cashback</div>
+     </div>
+    
+  <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">30 Day</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">2GB</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>1,000</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 3 Cashback</div>
+     </div>
+     
+    <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">30 Day</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">2.5GB</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>1,500</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 3.5 Cashback</div>
+     </div>
+      
+</div><!--Monthly offer closing-->
+
+    <!---Nighty Offer-->
+    <div id="nighty-offer">
+      
+    <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">1 Night</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">250mb</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>25</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 0.5 Cashback</div>
+     </div>
+     
+     
+  <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">1 Night</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">500mb</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>50</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 0.10 Cashback</div>
+     </div>
+     
+  <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">1 Night</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">750mb</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>100</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 0.15 Cashback</div>
+     </div>
+    
+ <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">1 Night</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">1Gb</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>200</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 0.20 Cashback</div>
+     </div>
+  
+  <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">2 night</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">500mb</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>300</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 1.5 Cashback</div>
+     </div>
+  
+     <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">2 night</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">1GB</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>500</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 2 Cashback</div>
+     </div>
+     
+  <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">3 Night</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">1.5GB</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>750</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 2.5 Cashback</div>
+     </div>
+    
+  <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">3 Night</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">2GB</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>1,000</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 3 Cashback</div>
+     </div>
+     
+    <div class="top-up-nav">
+      <div style="font-weight: normal; font-family: arial, sans-serif; font-size: 13px">3 Night</div>
+      <div style="margin: 8px 0px 5px; font-size: 18px;">2.5GB</div>
+      
+      <div style="display: flex; align-items: center; font-weight: normal;">
+     <span>&#8358</span>
+     <div>1,500</div>
+     </div>
+     
+     <div class="cash-back"><span>&#8358</span> 3.5 Cashback</div>
+     </div>
+      
+</div><!--Nighty offer closing-->
+</div> <!--Top Up closing tag-->
+
+<!--History-->
+<div id="history-container"></div>
+
+<script src="data-recharge.js" defer></script>
+  </body>
+</html>
