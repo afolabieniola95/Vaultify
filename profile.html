@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Acccount</title>
+    <link rel="stylesheet" href="profile.css">
+    <style>
+  body{
+    margin: 0;
+    font-family: Arial;
+  }
+  .header{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    font-size: 16px;
+  }
+  .profile{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    border: 1px solid grey;
+    background: gainsboro;
+    background-position: center;
+    background-size: cover;
+    margin: 50px auto 0;
+  }
+  footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    border-top: 1px solid gainsboro;
+    background: white;
+    box-sizing: border-box;
+    padding: 5px 20px;
+  }
+  .footer-nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  footer span{
+    font-size: 13px;
+  }
+  .details-container{
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    padding: 70px 20px;
+  }
+  p{
+    font-family: Sans-Serif;
+    margin: 5px 0;
+    font-size: 16px;
+  }
+  .disabled-click{
+    position: fixed;
+    top: 21%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border: 2px solid transparent;
+    background: transparent;
+    border-radius: 100%;
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.4s;
+  }
+  .disabled-click.disable{
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .upload-text{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0px;
+    background: gainsboro;
+    text-align: center;
+    font-size: 16px;
+    box-shadow: 0 0 5px grey;
+    text-shadow: 0 0 2px grey;
+    color: brown;
+    transition: 0.4s;
+  }
+  .upload-text.upload{
+    height: 20px;
+    padding: 8px;
+  }
+  .spinner{
+    position: absolute;
+    top: 35px;
+    left: 35px;
+    display: none;
+    width: 25px;
+    height: 25px;
+    border: 3px solid white;
+    border-top-color: navy;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+    z-index: 4;
+  }
+  @keyframes spin { 
+    to { transform: rotate(360deg);}
+  } 
+  .spinner.show{
+    display: block;
+  }
+  input{
+    outline: none;
+    width : 300px;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid grey;
+    font-size: 18px;
+  }
+  #save-btn{
+    display: none;
+    width: 150px;
+    padding: 2px;
+    font-size: 18px;
+    background: navy;
+    color: white;
+    box-shadow: 0 0 2px blue;
+    border-radius: 5px;
+  }
+    </style>
+  </head>
+  <body>
+   <div class="header">
+     <p style="font-size: 18px; font-weight: bold">Profile</p>
+   </div>
+   
+   
+   <div class="profile" id="preview">
+     <div id="no-profile" style="background-image: url('icon/no-profile.png'); margin-top: 15px; width: 100%; height: 100%; background-size: cover; background-position: center;"></div>
+    <div class="spinner"></div>
+   </div>
+    <input type="file" id="file-picker" accept="image/*" hidden>
+    
+    <div class="disabled-click"></div>
+    <div class="upload-text"></div>
+
+   <div class="details-container">
+     <div class="details">
+       <div style="font-weight: bold; font-size: 16px;">Full Name</div>
+       <p id="user-name"></p>
+     </div>
+     
+     <div class="details">
+      <div style="font-weight: bold; font-size: 16px;">Phone</div>
+       <p id="user-phone"></p>
+     </div>
+     
+     <div class="details">
+       <div id="update-email" style="font-weight: bold; font-size: 16px;">Email</div>
+       <p id="user-email">No email</p>
+        <input type="email" id="email" style="display: none">
+     </div>
+     
+   </div>
+      
+      <div id="overlay"></div>
+      
+   <center>
+       <button id="save-btn">Save</button>
+  </center>
+  
+<footer>
+  <a href="home.html" style="text-decoration: none; color: black;">
+  <div class="footer-nav">
+<img src="icon/home.png" style="width: 25px; height: 25px;">
+    <span id="home-text">Home</span>
+  </div></a>
+  
+    <div class="footer-nav">
+   <img src="icon/message.png" style="width: 25px; height: 25px;">
+    <span>Message</span>
+  </div>
+  
+    <div class="footer-nav">
+   <img src="icon/badge.png" style="width: 25px; height: 25px;">
+    <span>Badge</span>
+  </div>
+  
+    <div class="footer-nav">
+   <img src="icon/profile-active.png" style="width: 25px; height: 25px;">
+    <span style="color: navy; font-weight: bold;">Profile</span>
+  </div>
+  </footer>
+  
+  
+  <script src="app.js" defer></script>
+ <script>
+window.addEventListener('DOMContentLoaded', () => {
+  const currentUser = getCurrentUser(); // from app.js
+  const noProfile = document.getElementById('no-profile');
+
+  if (!currentUser) {
+    window.location.href = "index.html";
+    return;
+  } else {
+    document.getElementById("user-name").textContent = currentUser.name;
+    document.getElementById("user-phone").textContent = currentUser.phone;
+    document.getElementById("user-email").textContent = currentUser.email;
+
+    const avatarDiv = document.getElementById("preview");
+    avatarDiv.style.backgroundImage = currentUser.avatar
+     ? `url(${currentUser.avatar})`
+      : `url(default-avatar.png)`;
+
+    // Get rank info from the number stored in currentUser
+    
+    // Show rank icon + name
+     }
+
+  if(currentUser.avatar){
+    noProfile.style.display = "none";
+  }
+
+
+   const preview = document.getElementById('preview');
+   const filePicker = document.getElementById('file-picker');
+     
+     preview.addEventListener('click', ()=> filePicker.click());
+     
+     filePicker.addEventListener('change', ()=>{
+       const file = filePicker.files[0];
+       handleFile(file);
+     });
+     
+     function handleFile(file){
+       if(file.size > 5 * 1024 * 1024){
+         alert('File is too large. Max 5MB');
+         return;
+       }
+       
+       const reader = new FileReader();
+       const noProfile = document.getElementById('no-profile');
+       const spinner = document.querySelector('.spinner');
+       const disabledClick = document.querySelector('.disabled-click');
+       const uploadSuccess = document.querySelector('.upload-text');
+       
+       reader.onload = (e) => {
+         const base64 = e.target.result;
+         spinner.classList.add('show');
+         uploadSuccess.classList.add('upload');
+         uploadSuccess.textContent = "Uploading...";
+         disabledClick.classList.add('disable');
+
+         setTimeout(()=>{
+           uploadSuccess.classList.remove('upload');
+           uploadSuccess.textContent = "";
+         },3000);
+         
+         setTimeout(()=>{
+         preview.style.backgroundImage = `url(${base64})`;
+         noProfile.style.display = "none";
+         spinner.classList.remove('show');
+         disabledClick.classList.remove('disable');
+         uploadSuccess.classList.add('upload');
+         uploadSuccess.textContent = "Upload Successfully";
+         uploadSuccess.style.color = "green";
+         },2000);
+       
+       
+           // Update currentUser
+       const currentUser = getCurrentUser();
+       const users = getUsers();
+       const idx = users.findIndex(
+       u => u.id === currentUser.id
+    );
+
+       if (idx !== -1) {
+        users[idx].avatar = base64;
+        saveUsers(users);
+        setCurrentUser(users[idx]);
+     }
+ }
+    
+       reader.readAsDataURL(file);
+       }
+        
+       let clicked = false;
+       const updateEmail = document.getElementById('update-email');
+       const editEmail = document.getElementById('email'); 
+       const saveBtn = document.getElementById('save-btn');
+      const userEmail = document.getElementById('user-email');
+      
+        updateEmail.addEventListener('click', ()=>{
+        
+        if(!clicked){
+         editEmail.style.display = "block";
+         editEmail.focus();
+         userEmail.textContent = "";
+         saveBtn.style.display = "block";
+         clicked = true;
+        }else{
+          editEmail.style.display = "none";
+          userEmail.textContent = "No email";
+          saveBtn.style.display = "none";
+          clicked = false;
+        }
+      });
+      
+      saveBtn.addEventListener('click', () => {
+      const email = editEmail.value.trim().toLowerCase();
+
+     if (!email) {
+       editEmail.style.display = "none";
+       userEmail.textContent = currentUser.email || "No email";
+       saveBtn.style.display = "none";
+       return;
+  }
+
+   const currentUser = getCurrentUser();
+   const users = getUsers();
+   const idx = users.findIndex( u => u.id === currentUser.id
+  );
+
+  if (idx !== -1) {
+     users[idx].email = email;
+     saveUsers(users);
+     setCurrentUser(users[idx]);
+      saveBtn.textContent = "Saving...";
+
+     setTimeout(() => {
+      saveBtn.textContent = "Saved";
+       userEmail.textContent = email;
+       editEmail.style.display = "none";
+      saveBtn.style.display = "none";
+     }, 1500);
+       }
+
+});
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+});
+     
+  </script>
+  
+  
+  </body>
+  </html>
