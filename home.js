@@ -16,8 +16,9 @@ window.addEventListener('DOMContentLoaded', () => {
   // User data
   nameEl.textContent = currentUser.name;
   balanceEl.textContent = currentUser.balance;
-  symbol.innerHTML = "&#8358";
-
+  symbol.innerHTML = "";
+  balanceEl.textContent = "****";
+  
   avatarDiv.style.backgroundImage = currentUser.avatar
     ? `url(${currentUser.avatar})`
     : `url(icon/no-profile.png)`;
@@ -38,8 +39,8 @@ window.addEventListener('DOMContentLoaded', () => {
         opened.style.display = "none";
         closed.style.display = "block";
 
-        balanceEl.textContent = "****";
-        symbol.innerHTML = "";
+        balanceEl.textContent = currentUser.balance;
+        symbol.innerHTML = "&#8358";
         toggled = true;
 
       } else {
@@ -47,8 +48,8 @@ window.addEventListener('DOMContentLoaded', () => {
         opened.style.display = "block";
         closed.style.display = "none";
 
-        balanceEl.textContent = currentUser.balance;
-        symbol.innerHTML = "&#8358";
+        balanceEl.textContent = "*****";
+        symbol.innerHTML = "";
         toggled = false;
       }
 
