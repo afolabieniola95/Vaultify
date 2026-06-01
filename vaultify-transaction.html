@@ -106,23 +106,29 @@
         color: white;
       }
       .accounts{
-        position: relative;
+        psition: relative;
         display: flex;
         align-items: center;
         gap: 10px;
         border-bottom: 1px dotted grey;
         padding: 12px 0;
       }
+      .account-list{
+        width: 100%;
+      }
       .profile{
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
         border-radius: 100%;
         background-size: cover;
         background-position: center;
       }
       .name{
-        font-size: 20px;
+        font-size: 16px;
         font-weight: bold;
+      }
+      .account-num{
+        font-size: 14px;
       }
       .send-count{
         position: absolute;
@@ -208,40 +214,10 @@
       
       <input type="search" id="search-account" placeholder="Name or account number">
     
-      <div class="account-history">
-        <div class="accounts" id="">
-          <div class="profile" style="background-image: url('image/bolu1.jpg')"></div>
-         
-          <div>
-          <p class="name">Afolabi Boluwatife Eniola</p>
-          <p class="account-num">9075484829</p>
-          </div>
-          <p class="send-count">2 times</p>
-          </div>
-        
-        <div class="accounts" id="">
-          <div class="profile" style="background-image: url('image/bolu2.jpg')"></div>
-         
-          <div>
-          <p class="name"> Boluwatife Eniola</p>
-          <p class="account-num">9031804917</p>
-          </div>
-          <p class="send-count">22 times</p>
-          </div>
-        </div>
+      <div class="account-history"></div>
         <!--Account List Ends here-->
         
-        <div class="frequent-account">
-         <div class="accounts" id="">
-          <div class="profile" style="background-image: url('image/bolu2.jpg')"></div>
-         
-          <div>
-          <p class="name"> Boluwatife Eniola</p>
-          <p class="account-num">9031804917</p>
-          </div>
-          <p class="send-count">22 times</p>
-          </div>
-        </div>
+        <div class="frequent-account"></div>
     </div>
     
 <script>
@@ -349,7 +325,7 @@ function renderAccounts(filteredUsers){
       onclick="selectAccount('${user.phone}')">
 
         <div class="profile"
-        style="background-image:url('${user.avatar || "icon/no-profile.png"}')">
+        style="background-image:url('${user.avatar || "icon/no-profile.png"}');">
         </div>
 
         <div>
@@ -375,6 +351,7 @@ function selectAccount(phone){
   const matchedUser = users.find(user =>
     user.phone === phone
   );
+  
 
   if(!matchedUser) return;
 
@@ -387,9 +364,17 @@ function selectAccount(phone){
   `url('${matchedUser.avatar || "icon/no-profile.png"}')`;
 
   accountList.innerHTML = "";
+  
+  setTimeout(()=>{
+  window.location.href = "payment-page.html";
+  }, 1000);
 
 }
 
+ 
+ 
+  const recentBtn = document.getElementById('recent');
+  const  frequentBtn = document.getElementById('frequent');
 </script>
     </body>
     </html>
